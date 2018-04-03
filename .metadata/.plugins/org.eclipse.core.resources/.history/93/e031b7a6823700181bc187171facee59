@@ -1,0 +1,34 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);	
+		int expressoes = sc.nextInt();
+		sc.nextLine();
+		for(int i = 1; i<=expressoes; i++) {
+			String expressao = sc.nextLine();
+			String[] tokens = expressao.split("");
+			String saida = "";
+			Stack pilha = new Stack();
+			for(String token : tokens) {
+				if("()".contains(token)) {
+					if(token.equals("(")) pilha.push(token);
+					else {
+						String t = (String) pilha.pop();
+						while(!t.equals(")")) {
+							saida+=t;
+						}						
+					}
+				} else if("+-*/^".contains(token)) {
+								
+				} else {
+					saida += token;
+				}
+			}
+		}
+
+	}
+
+}

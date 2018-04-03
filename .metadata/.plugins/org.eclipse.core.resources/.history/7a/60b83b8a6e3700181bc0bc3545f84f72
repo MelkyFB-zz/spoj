@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int c = sc.nextInt();
+		for(int i=1;i<=c;i++){
+			String ns = sc.nextLine();
+			String[] cs = ns.split(" ");
+			int me = Integer.parseInt(cs[0]);
+			int ma = Integer.parseInt(cs[1]);
+			for(int n = me;n<=ma;n++) {
+				boolean p = true;
+				for(int t=2;(t<=Math.sqrt(n))&&(p);t++){
+					if(n%t==0) p = false;					
+				}
+				if(p) System.out.println(n);
+			}
+			System.out.println("");
+		}
+	}
+
+}

@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		while(sc.hasNext()) {
+			String text = sc.nextLine();
+			text = text.replaceAll("/[.,\\/#!$%\\^&\\*;:{}=\\-_`~()]/g", "");			
+			String revText = new StringBuilder(text).reverse().toString();
+			System.out.println(text+":"+revText);
+			System.out.println(text.equalsIgnoreCase(revText) ? "YES" : "NO");
+		}
+	}
+
+}

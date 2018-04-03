@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);	
+		int expressoes = sc.nextInt();
+		sc.nextLine();
+		for(int i = 1; i<=expressoes; i++) {
+			String expressao = sc.nextLine();
+			String[] tokens = expressao.split("");
+			for(String token : tokens) {
+				if("()".contains(token)) {
+					System.out.println("funcao");
+				} else if("+-*/^".contains(token)) {
+					System.out.println("operador");					
+				} else {
+					System.out.println("operando");
+				}
+			}
+		}
+
+	}
+
+}
